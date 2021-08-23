@@ -11,7 +11,7 @@ In this project I've used the following libs:
 * [Koin](https://github.com/InsertKoinIO/koin) - for Dependency Injection
 * [Coil](https://github.com/coil-kt/coil) - for fast image requests using coroutines
 * [LruCache](https://developer.android.com/reference/androidx/collection/LruCache) - To cache images for approximately 1 day 
-* [Retrofit](https://github.com/square/retrofit), OkHttp Gson - for networking
+* [Retrofit](https://github.com/square/retrofit), [OkHttp](https://github.com/square/okhttp) and [Gson](https://github.com/google/gson) - for networking
 * [Chrome Custom Tabs](https://developer.android.com/reference/androidx/browser/customtabs/CustomTabsIntent) - for fast internet search
 * [Lottie](https://github.com/airbnb/lottie-android) - for cool animations in .JSON format
 
@@ -20,38 +20,37 @@ In this project I've used the following libs:
 ## Code Structure
 The architecture i've used is MVVM, and the important repositories and classes in this code is as follows:
 
-### HeroRepository
-**Abstract:** 
-    HeroRepository - used to fetch and search heroes from API <br/> <br/>
-**Implementations:**
-    HeroRepositoryImpl - implemented with safe Api calls <br/>
+## HeroRepository
+### Abstract:
+    HeroRepository - used to fetch and search heroes from API
+### Implementations:
+* **HeroRepositoryImpl** - implemented with safe Api calls <br/>
 
-### Top3Repository
-**Abstract:**
-    Top3Repository - used to fetch The Top 3 Heroes <br/> <br/>
-**Implementations:**
-    Top3RepositoryImpl - brings hardcoded data from the app and API <br/>
-    RandomTop3RepositoryImpl - brings random data from the API <br/>
+## Top3Repository
+### Abstract:
+    Top3Repository - used to fetch The Top 3 Heroes
+### Implementations:
+* **Top3RepositoryImpl** - brings hardcoded data from the app and API <br/>
+* **RandomTop3RepositoryImpl** - brings random data from the API <br/>
 
-### NavigationManager
-**Abstract:**
-    **NavigationManager** - used to pass data objects between fragments <br/> <br/>
-**Implementation:**
-    **NavigationManagerImpl** - mainly moves hero data when clicked from lists
+## NavigationManager
+### Abstract:
+    NavigationManager - used to pass data objects between fragments
+### Implementation:
+* **NavigationManagerImpl** - mainly moves hero data when clicked from lists
 
 
-### Special Classes:
-**SimpleResponse** - is used to wrap basic response from retrofit and generalize the response to one object. <br/>
-**LoadingProgressData** - helps to distinct events of loading start and end <br/>
+## Special Classes
+* **SimpleResponse** - is used to wrap basic response from retrofit and generalize the response to one object. <br/>
+* **LoadingProgressData** - helps to distinct events of loading start and end <br/>
+* **BaseHeroDataFragment** - represents the basic functionalities of each Hero Data card view presented in hero screen<br/>
 
-## Adapters:
-**Abstract:**
-    **BasicHeroesAdapter** - makes all the general info about the hero appear on screen. <br/> <br/>
-**Implementation:**
-    **HeroesAdapter** - for search list in main screen. <br/>
-    **TopHeroesAdapter** - for the top 3 heroes preselected. <br/>
-
-**HeroDataAdapter** - Adapter for hero data inside of hero screen <br/>
-**BaseHeroDataFragment** - represents the basic functionalities of each Hero Data card view presented in hero screen
+## Adapters
+### Abstract:
+    BasicHeroesAdapter - makes all the general info about the hero appear on screen.
+### Implementations:
+*    **HeroesAdapter** - for search list in main screen. <br/>
+*    **TopHeroesAdapter** - for the top 3 heroes preselected. <br/>
+*    **HeroDataAdapter** - Adapter for hero data inside of hero screen <br/>
 
 [Click here to visit my website](https://3p-cups.com/)
