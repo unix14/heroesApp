@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.eyalya.hapoalim.herosapp.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_fragment">
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/HeroPageFragment"
+        android:name="com.eyalya.hapoalim.herosapp.ui.hero_page.HeroPageFragment"
+        android:label="HeroPageFragment"
+        tools:layout="@layout/hero_page_fragment">
+
+        <argument
+            android:name="heroId"
+            app:argType="integer"
+            android:defaultValue="@null" />
+
+    </fragment>
+
+</navigation>

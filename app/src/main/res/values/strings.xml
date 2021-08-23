@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Heroes App</string>
+
+    <string name="search_hero">Search Hero</string>
+
+    <string name="biography">Biography</string>
+    <string name="work">Work</string>
+    <string name="connections">Connections</string>
+    <string name="appearance">Appearance</string>
+    <string name="power_stats">Power Stats</string>
+
+    <string name="publisher">Publisher</string>
+</resources>

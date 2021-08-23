@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <EditText
+        android:id="@+id/search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:layoutDirection="ltr"
+        android:textDirection="ltr"
+        android:background="@drawable/rounded_edit_text_bkg"
+        android:ellipsize="end"
+        android:hint="Search Super Hero by name"
+        android:imeOptions="actionSearch"
+        android:inputType="textWebEditText"
+        android:lines="1"
+        android:maxLength="15"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/clear_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:src="@drawable/ic_clear"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/search_box"
+        app:layout_constraintEnd_toEndOf="@id/search_box"
+        app:layout_constraintTop_toTopOf="@id/search_box" />
+
+
+    <TextView
+        android:id="@+id/empty_screen_placeholder"
+        android:layout_width="match_parent"
+        android:fontFamily="sans-serif-condensed-light"
+        android:layout_height="0dp"
+        android:breakStrategy="high_quality"
+        android:gravity="center|top"
+        android:padding="70dp"
+        android:text="Click on Yellow Button\nto search for SuperHeroes!!"
+        android:textColor="@color/black_dark_mode_support"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box" />
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/super_hero_anim"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/anim_superman"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/heroes_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white_dark_mode_support"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="26dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box"
+        app:spanCount="2"
+        tools:itemCount="5"
+        tools:listitem="@layout/super_hero_item" />
+
+
+    <TextView
+        android:id="@+id/no_results_placholder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:breakStrategy="high_quality"
+        android:gravity="center|top"
+        android:padding="70dp"
+        android:text="No results.."
+        android:textColor="@color/black_dark_mode_support"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box" />
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/no_results_anim"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/anim_batman"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_margin="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_box" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
